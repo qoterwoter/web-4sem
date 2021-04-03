@@ -1,10 +1,14 @@
 {
-  "request" : {
-    "urlPath" : "/sale",
-    "method" : "GET"
-  },
-  "response" : {
-    "status": 200,
-    "body": "{{requ}}"
-  }
+    "request": {
+        "urlPath": "/sale",
+        "method": "GET"
+    },
+    "response": {
+        "status": 200,
+        "body": "{{requ}}"
+    },
+    "users": {
+        "urlPath": "/users",
+        "method": "GET"
+    }
 }
