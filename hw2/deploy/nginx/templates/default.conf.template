@@ -15,4 +15,17 @@ server {
     location = /50x.html {
         root   /usr/share/nginx/html;
     }
+    
+    # Статика для изображений
+    location /img/ {
+        location ~ \.(?:jpg|jpeg|gif|png|ico)$ {
+            root /data/static;
+            location ~* \.(jpg|jpeg|png||ico)$ {
+                access_log off;
+                log_not_found off;
+                expires 360d;
+                add_header Cache-Control "public";
+            }
+        }
+    }
 }
