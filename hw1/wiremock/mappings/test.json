@@ -1,14 +1,10 @@
 {
     "request": {
-        "urlPath": "/sale",
+        "urlPath": "/irat",
         "method": "GET"
     },
     "response": {
         "status": 200,
-        "body": "{{requ}}"
-    },
-    "users": {
-        "urlPath": "/users",
-        "method": "GET"
+        "bodyFileName": "irat.jpg"
     }
 }
