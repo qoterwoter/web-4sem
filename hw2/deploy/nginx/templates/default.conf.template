@@ -10,22 +10,21 @@ server {
         root   /usr/share/nginx/html;
         index  index.html index.htm;
     }
-
+    location /img/ {
+        root   /usr/share/nginx;
+    }
+    location /doc/ {
+        root   /usr/share/nginx;
+    }
+    location /video/ {
+        root   /usr/share/nginx;
+    }
+    location /html/ {
+        root   /usr/share/nginx;
+    }
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
         root   /usr/share/nginx/html;
     }
     
-    # Статика для изображений
-    location /img/ {
-        location ~ \.(?:jpg|jpeg|gif|png|ico)$ {
-            root /data/static;
-            location ~* \.(jpg|jpeg|png||ico)$ {
-                access_log off;
-                log_not_found off;
-                expires 360d;
-                add_header Cache-Control "public";
-            }
-        }
-    }
 }
