@@ -1,0 +1,103 @@
+use('students');
+// НА 4
+// Создание собственного индекса
+// db.lessons.createIndex({"lesson_id":1},{"name":"lesson_id__unique","unique": true})
+
+// Наполнение БД
+db.lessons.insertMany([
+    {"lesson_id":1,"name":'Веб-разработка на стороне клиента','Описание':'Веб-разработка на языке JavaScript'},
+    {"lesson_id":2,"name":'Серверная веб-разработка','Описание':'Веб-разработка на языке PHP'},
+    {"lesson_id":3,"name":'Физкультура','Описание':'Элективные курсы по физкультуре'},
+    {"lesson_id":4,"name":'Мат.логика','Описание':'Занятия по мат.логике'}
+])
+
+// Создание ссылки из коллекции students на коллекцию lessons
+// db.students.updateOne(
+//     {_id:ObjectId("60902c76542f91245c95e734")},
+//     {$set:{lesson1: 
+//     {
+//         "$ref":"lessons",
+//         "$id":"60902fdd1c2ac0245ca71985",
+//     }}}
+// )
+
+
+
+
+
+
+// НА 3
+// Вставить значение
+// db.students.insertOne(
+//     {name:"Alexander",surname:"Tsalapov",course:"2","phone": "7 999 858 32 65"}
+// )
+
+// Обновление значения
+// db.students.updateOne(
+//     {_id:ObjectId("60902cb4a7522b245c10b126")},
+//     {$set:{'name':"Ivan","phone":"no exist"}}
+// )
+
+// Поиск значения
+// db.students.find(
+//     {surname:"Tsalapov"},{"_id":false}
+// )
+
+// Удалить значение
+// db.students.deleteOne({_id:ObjectId("60902cb4a7522b245c10b126")})
+
+
+
+// db.users.dropIndex({"email": 1});
+// db.users.createIndex({"email": 1}, {"name": "email_unique", "unique": true});
+// db.users.getIndexes();
+
+// db.users.find({email: null});
+// db.users.find({email: {$exists: true, $eq: null}});
+// db.users.find({email: {$exists: false, $eq: null}});
+
+// db.users.deleteMany({email: {$exists: false, $eq: null}});
+// db.users.find();
+
+// db.users.updateOne({_id: ObjectId('60685568409e16c5b659d2e6')}, {
+//     $set: {
+//         phone: [
+//             {"phone":78889992233, "primary":true, "contactName": "Misha"},
+//             {"phone":78889992244, "primary":false, "contactName": "Glasha"},
+//         ]
+//     }
+// })
+
+// db.contacts.insertMany([
+//     {"phone": "111111", "email": "111111@vvv.ru", "userId": ObjectId("1111533d409e16c5b659d2e3")},
+//     {"phone": "222222", "email": "222222@vvv.ru", "userId": ObjectId("2222553d6c6d580d29dbfc3a")}
+// ]
+//     );
+
+
+// original_id = ObjectId()
+// db.places.insertOne({
+//     "_id": original_id,
+//     "name": "Broadway Center",
+//     "url": "bc.example.net"
+// })
+// db.people.insertOne({
+//     "name": "Erin",
+//     "places_id": original_id,
+//     "url": "bc.example.net/Erin"
+// })
+
+
+// db.contacts.aggregate(
+//     [
+//         {
+//             $lookup:
+//                 {
+//                     from: "users",
+//                     localField: "userId",
+//                     foreignField: "_id",
+//                     as: "user"
+//                 },
+//         },
+//         {$project: {"_id": 1, "user.name": 1, "email": 1}}
+//  
