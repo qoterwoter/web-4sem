@@ -1,0 +1,66 @@
+use('students');
+
+// НА 4
+
+// find
+db.students.find({"course":"2"}).explain()
+
+
+// Создание собственного индекса
+db.lessons.createIndex({"lesson_id":1},{"name":"lesson_id__unique","unique": true})
+
+// Наполнение БД
+db.lessons.insertMany([
+    {"lesson_id":1,"name":'Веб-разработка на стороне клиента','Описание':'Веб-разработка на языке JavaScript'},
+    {"lesson_id":2,"name":'Серверная веб-разработка','Описание':'Веб-разработка на языке PHP'},
+    {"lesson_id":3,"name":'Физкультура','Описание':'Элективные курсы по физкультуре'},
+    {"lesson_id":4,"name":'Мат.логика','Описание':'Занятия по мат.логике'}
+])
+
+// Создание ссылки из коллекции students на коллекцию lessons
+db.students.updateOne(
+    {_id:ObjectId("60902c76542f91245c95e734")},
+    {$set:{lesson1: 
+    {
+        "$ref":"lessons",
+        "$id":ObjectId("60902fdd1c2ac0245ca71985"),
+    }}}
+)
+
+db.students.insertMany([
+  {
+    "name": "Ivan",
+    "surname": "Ashiroff",
+    "course": "2",
+    "phone": "7 999 333 23 43",
+    "lesson1":ObjectId("60902fdd1c2ac0245ca71985")
+  },
+  {
+    "name": "Ayrat",
+    "surname": "Ashiroff",
+    "course": "2",
+    "phone": "7 888 334 55 22",
+    "lesson1":ObjectId("60902fdd1c2ac0245ca71985")
+
+  },
+  {
+    "name": "Rodion",
+    "surname": "Bannikoff",
+    "course": "2",
+    "lesson1":ObjectId("60902fdd1c2ac0245ca71985")
+  },
+  {
+    "name": "Ivan",
+    "surname": "Ivanov",
+    "course": "1",
+    "phone": "7 999 858 32 65",    
+    "lesson1":ObjectId("60902fdd1c2ac0245ca71985")
+  },
+  {
+    "name": "Alex",
+    "surname": "Alexov",
+    "course": "3",
+    "phone": "7 999 858 32 65",
+    "lesson1":ObjectId("60902fdd1c2ac0245ca71985")
+  }
+])

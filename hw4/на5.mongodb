@@ -1,6 +1,7 @@
 use('students');
 
-
+// На 5
+// агрегация из двух коллекций
 db.lessons.aggregate([
     {
         $lookup: {

@@ -1,0 +1,21 @@
+use('students');
+
+// НА 3
+// Вставить значение
+db.students.insertOne(
+    {name:"Alexander",surname:"Tsalapov",course:"2","phone": "7 999 858 32 65"}
+)
+
+// Обновление значения
+db.students.updateOne(
+    {_id:ObjectId("60902cb4a7522b245c10b126")},
+    {$set:{'name':"Ivan","phone":"no exist"}}
+)
+
+// Поиск значения
+db.students.find(
+    {surname:"Tsalapov"},{"_id":false}
+)
+
+// Удалить значение
+db.students.deleteOne({_id:ObjectId("60902cb4a7522b245c10b126")})
