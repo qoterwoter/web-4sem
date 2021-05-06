@@ -11,7 +11,7 @@ namespace App\Controller;
 class TestController
 {
     /**
-     * @Route(path="/')
+     * @Route(path="/', methods={GET})
      */
         
     public function index() {
