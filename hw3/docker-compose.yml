@@ -1,7 +1,7 @@
 version: "3"
 services:
   nginx:
-    container_name: project-nginx
+    container_name: hw3-nginx
     build:
       context: .
       dockerfile: deploy/nginx/Dockerfile
@@ -10,11 +10,11 @@ services:
     ports:
       - "8081:80"
     environment:
-      - NGINX_CUSTOM_SERVER_NAME=project-2021.local
-      - NGINX_SYMFONY_SERVER_NAME=project-symfony.local
+      - NGINX_CUSTOM_SERVER_NAME=hw3-2021.local
+      - NGINX_SYMFONY_SERVER_NAME=hw3-symfony.local
 
   php:
-    container_name: project-php
+    container_name: hw3-php
     build:
       context: .
       dockerfile: deploy/php-fpm/Dockerfile
