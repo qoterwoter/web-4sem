@@ -1,0 +1,7 @@
+172.24.0.1 - - [16/Jun/2021:19:30:18 +0000] "GET /api/v1/students/ HTTP/1.1" 500 5 "-" "PostmanRuntime/7.26.8"
+172.24.0.1 - - [16/Jun/2021:19:30:25 +0000] "GET /api/v1/ HTTP/1.1" 500 5 "-" "PostmanRuntime/7.26.8"
+172.24.0.1 - - [16/Jun/2021:19:30:28 +0000] "GET /api/v1 HTTP/1.1" 500 5 "-" "PostmanRuntime/7.26.8"
+172.24.0.1 - - [16/Jun/2021:19:30:31 +0000] "GET /api/v1/students HTTP/1.1" 500 5 "-" "PostmanRuntime/7.26.8"
+172.24.0.1 - - [16/Jun/2021:19:32:44 +0000] "GET /api/v1/students HTTP/1.1" 500 5 "-" "PostmanRuntime/7.26.8"
+172.24.0.1 - - [16/Jun/2021:19:32:48 +0000] "GET /api/v1/students/ HTTP/1.1" 500 5 "-" "PostmanRuntime/7.26.8"
+172.24.0.1 - - [16/Jun/2021:19:33:01 +0000] "GET /api/v1/students/ HTTP/1.1" 500 5 "-" "PostmanRuntime/7.26.8"
