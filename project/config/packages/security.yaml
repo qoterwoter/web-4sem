@@ -1,32 +1,30 @@
+imports:
+    - { resource: role_hierarchy.yaml }
+
 security:
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     enable_authenticator_manager: true
     encoders:
+        # this internal class is used by Symfony to represent in-memory users
         Symfony\Component\Security\Core\User\User: 'auto'
-    providers:
-        backend_users:
-            memory:
-                users:
-                    admin: { password: '$argon2id$v=19$m=65536,t=4,p=1$bor3xwDd2PK8rqmaHaxkBA$RR3yXNOygTRzAlq/UIOMoOPHKg1AVUolXHMnGU2QuQI', roles: ['ROLE_ADMIN'] },
-                    ildar: { password: '$argon2id$v=19$m=65536,t=4,p=1$7TYIfjBx5PR36FFGUZkDhQ$AAaZIURKH4qUxGw56GGWrnfgfua3dPSX/JhcxQ/k9+4', roles: ['ROLE_USER'] }
 
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        app_user_provider:
+            mongodb:
+                class: App\Core\User\Document\User
+                property: phone
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        main:
+        api:
             pattern: ^/api
-            http_basic:
-                realm: Access denied
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#firewalls-authentication
-
-            # https://symfony.com/doc/current/security/impersonating_user.html
-            # switch_user: true
+            entry_point: App\Core\User\Security\ApiKeyAuthenticator
+            custom_authenticators:
+                - App\Core\User\Security\ApiKeyAuthenticator
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/api, roles: ROLE_ADMIN }
-        - { path: ^/, roles: ROLE_USER }
+        - { path: ^/api, roles: ROLE_USER }
