@@ -28,7 +28,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 
 /**
- * @Route("/users")
+ * @Route("/students")
  */
 class UserController extends AbstractController
 {
