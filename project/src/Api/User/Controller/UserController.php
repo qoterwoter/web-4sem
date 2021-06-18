@@ -7,8 +7,8 @@ namespace App\Api\User\Controller;
 use App\Api\User\Dto\LessonResponseDto;
 use App\Api\User\Dto\UserCreateRequestDto;
 use App\Api\User\Dto\UserListResponseDto;
-use App\Api\User\Dto\UserUpdateRequestDto;
 use App\Api\User\Dto\UserResponseDto;
+use App\Api\User\Dto\UserUpdateRequestDto;
 use App\Api\User\Dto\ValidationExampleRequestDto;
 use App\Core\Common\Dto\ValidationFailedResponse;
 use App\Core\User\Document\Lesson;
@@ -132,7 +132,7 @@ class UserController extends AbstractController
      * @param User|null         $user
      * @param LessonRepository $lessonRepository
      *
-     * @return LessonResponseDto|ValidationFailedResponse|Response
+     * @return UserResponseDto|ValidationFailedResponse|Response
      */
     public function createLesson(
         Request $request,
@@ -211,15 +211,8 @@ class UserController extends AbstractController
             return RoleHumanReadable::ADMIN;
         }
 
-        else if (in_array(Role::USER, $user->getRoles(), true)) {
+        if (in_array(Role::USER, $user->getRoles(), true)) {
             return RoleHumanReadable::USER;
-        }
-        else if (in_array(Role::STUDENT, $user->getRoles(), true)) {
-            return RoleHumanReadable::STUDENT;
-        }
-
-        else if (in_array(Role::MODERATOR, $user->getRoles(), true)) {
-            return RoleHumanReadable::MODERATOR;
         }
 
         return null;
@@ -251,7 +244,7 @@ class UserController extends AbstractController
      *
      * @return UserResponseDto
      */
-    private function createUserResponse(User $user, ?Lesson $lesson = null): LessonResponseDto
+    private function createUserResponse(User $user, ?Lesson $lesson = null): UserResponseDto
     {
         $dto = new UserResponseDto();
 

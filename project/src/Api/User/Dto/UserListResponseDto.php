@@ -8,7 +8,7 @@ class UserListResponseDto
 {
     public array $data;
 
-    public function __construct(LessonResponseDto ... $data)
+    public function __construct(UserResponseDto ... $data)
     {
         $this->data = $data;
     }
