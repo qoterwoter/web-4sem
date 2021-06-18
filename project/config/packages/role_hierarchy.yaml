@@ -1,15 +1,25 @@
 security:
   role_hierarchy:
     !php/const App\Core\User\Enum\Role::ADMIN:
-      - !php/const App\Core\User\Enum\Role::USER
+      - !php/const App\Core\User\Enum\Role::STUDENT
       - !php/const App\Core\User\Enum\Role::OPERATOR
-      - !php/const App\Core\User\Enum\Permission::USER_CREATE
-      - !php/const App\Core\User\Enum\Permission::USER_UPDATE
-      - !php/const App\Core\User\Enum\Permission::USER_DELETE
-      - !php/const App\Core\User\Enum\Permission::USER_VALIDATION
+      - !php/const App\Core\User\Enum\Permission::STUDENT_CREATE
+      - !php/const App\Core\User\Enum\Permission::STUDENT_UPDATE
+      - !php/const App\Core\User\Enum\Permission::STUDENT_DELETE
+      - !php/const App\Core\User\Enum\Permission::STUDENT_VALIDATION
+    !php/const App\Core\User\Enum\Role::MODERATOR:
+      - !php/const App\Core\User\Enum\Role::STUDENT
+      - !php/const App\Core\User\Enum\Role::OPERATOR
+      - !php/const App\Core\User\Enum\Permission::STUDENT_UPDATE
+      - !php/const App\Core\User\Enum\Permission::STUDENT_VALIDATION
     !php/const App\Core\User\Enum\Role::OPERATOR:
-      - !php/const App\Core\User\Enum\Role::USER
-      - !php/const App\Core\User\Enum\Permission::USER_LESSON_CREATE
-      - !php/const App\Core\User\Enum\Permission::USER_INDEX
+      - !php/const App\Core\User\Enum\Role::STUDENT
+      - !php/const App\Core\User\Enum\Permission::STUDENT_LESSON_CREATE
+      - !php/const App\Core\User\Enum\Permission::STUDENT_INDEX
     !php/const App\Core\User\Enum\Role::USER:
-      - !php/const App\Core\User\Enum\Permission::USER_SHOW
+      - !php/const App\Core\User\Enum\Permission::STUDENT_SHOW
+    !php/const App\Core\User\Enum\Role::STUDENT:
+      - !php/const App\Core\User\Enum\Role::STUDENT
+      - !php/const App\Core\User\Enum\Permission::STUDENT_LESSON_CREATE
+      - !php/const App\Core\User\Enum\Permission::STUDENT_SHOW
+      - !php/const App\Core\User\Enum\Permission::STUDENT_INDEX

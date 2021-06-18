@@ -35,7 +35,7 @@ class UserController extends AbstractController
     /**
      * @Route(path="/{id<%app.mongo_id_regexp%>}", methods={"GET"})
      *
-     * @IsGranted(Permission::USER_SHOW)
+     * @IsGranted(Permission::STUDENT_SHOW)
      *
      * @ParamConverter("user")
      *
@@ -58,7 +58,7 @@ class UserController extends AbstractController
 
     /**
      * @Route(path="", methods={"GET"})
-     * @IsGranted(Permission::USER_INDEX)
+     * @IsGranted(Permission::STUDENT_INDEX)
      * @Rest\View()
      *
      * @return UserListResponseDto|ValidationFailedResponse
@@ -84,7 +84,7 @@ class UserController extends AbstractController
 
     /**
      * @Route(path="", methods={"POST"})
-     * @IsGranted(Permission::USER_CREATE)
+     * @IsGranted(Permission::STUDENT_CREATE)
      * @ParamConverter("requestDto", converter="fos_rest.request_body")
      *
      * @Rest\View(statusCode=201)
@@ -123,7 +123,7 @@ class UserController extends AbstractController
 
     /**
      * @Route(path="/{id<%app.mongo_id_regexp%>}/lesson", methods={"POST"})
-     * @IsGranted(Permission::USER_LESSON_CREATE)
+     * @IsGranted(Permission::STUDENT_LESSON_CREATE)
      * @ParamConverter("user")
      *
      * @Rest\View(statusCode=201)
@@ -148,7 +148,7 @@ class UserController extends AbstractController
 
     /**
      * @Route(path="/{id<%app.mongo_id_regexp%>}", methods={"PUT"})
-     * @IsGranted(Permission::USER_UPDATE)
+     * @IsGranted(Permission::STUDENT_UPDATE)
      * @ParamConverter("user")
      * @ParamConverter("requestDto", converter="fos_rest.request_body")
      *
@@ -184,7 +184,7 @@ class UserController extends AbstractController
 
     /**
      * @Route(path="/{id<%app.mongo_id_regexp%>}", methods={"DELETE"})
-     * @IsGranted(Permission::USER_DELETE)
+     * @IsGranted(Permission::STUDENT_DELETE)
      * @ParamConverter("user")
      *
      * @Rest\View()
@@ -211,8 +211,8 @@ class UserController extends AbstractController
             return RoleHumanReadable::ADMIN;
         }
 
-        if (in_array(Role::USER, $user->getRoles(), true)) {
-            return RoleHumanReadable::USER;
+        if (in_array(Role::STUDENT, $user->getRoles(), true)) {
+            return RoleHumanReadable::STUDENT;
         }
 
         if (in_array(Role::STUDENT, $user->getRoles(), true)) {
@@ -227,7 +227,7 @@ class UserController extends AbstractController
 
     /**
      * @Route(path="/validation", methods={"POST"})
-     * @IsGranted(Permission::USER_VALIDATION)
+     * @IsGranted(Permission::STUDENT_VALIDATION)
      * @ParamConverter("requestDto", converter="fos_rest.request_body")
      *
      * @Rest\View()
