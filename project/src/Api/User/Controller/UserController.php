@@ -256,10 +256,10 @@ class UserController extends AbstractController
         $dto = new UserResponseDto();
 
         $dto->id                = $user->getId();
-        $dto->firstName         = $user->getFirstName();
-        $dto->lastName          = $user->getLastName();
+        $dto->name         = $user->getFirstName();
+        $dto->surname          = $user->getLastName();
         $dto->phone             = $user->getPhone();
-        $dto->roleHumanReadable = $this->getRoleHumanReadable($user);
+        $dto->role = $this->getRoleHumanReadable($user);
         $dto->token             = $user->getApiToken();
 
         if ($lesson) {

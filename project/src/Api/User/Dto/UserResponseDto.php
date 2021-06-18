@@ -9,13 +9,13 @@ class UserResponseDto
 {
     public ?string $id;
 
-    public ?string $firstName;
+    public ?string $name;
 
-    public ?string $lastName;
+    public ?string $surname;
 
     public string $phone;
 
-    public ?string $roleHumanReadable;
+    public ?string $role;
 
     public ?string $token;
 

@@ -6,10 +6,10 @@ namespace App\Api\User\Dto;
 
 class UserListResponseDto
 {
-    public array $data;
+    public array $students;
 
-    public function __construct(UserResponseDto ... $data)
+    public function __construct(UserResponseDto ... $students)
     {
-        $this->data = $data;
+        $this->students = $students;
     }
 }
