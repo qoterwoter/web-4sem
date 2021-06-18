@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   nginx:
-    container_name: project8-nginx
+    container_name: ${PROJECT_NAME}-nginx
     build:
       context: .
       dockerfile: deploy/nginx/Dockerfile
@@ -11,14 +11,14 @@ services:
     ports:
       - "8081:80"
     environment:
-      - NGINX_SYMFONY_SERVER_NAME=project8.local
+      - NGINX_SYMFONY_SERVER_NAME=${PROJECT_NAME}.local
     links:
       - php
     networks:
       - project
 
   php:
-    container_name: project8-php
+    container_name: ${PROJECT_NAME}-php
     build:
       context: .
       dockerfile: deploy/php-fpm/Dockerfile
@@ -36,7 +36,7 @@ services:
       - project
 
   db:
-    container_name: project8-mongodb
+    container_name: ${PROJECT_NAME}-mongodb
     image: mongo
     ports:
       - 27018:27017
@@ -47,4 +47,4 @@ services:
 
 networks:
   project:
-    name: project8-network
+    name: ${PROJECT_NAME}-network

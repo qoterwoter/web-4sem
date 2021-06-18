@@ -1,5 +1,5 @@
 # ADD MORE GLOBAL VARIABLES HERE
-LOCALHOST_PROJECT_DIR := $(shell pwd)
+LOCALHOST_PROJECT_DIR := $(shell pwd "-"W)
 VERSION := $(shell git describe --tags 2> /dev/null || git rev-parse --short HEAD)
 
 # IMPORT CONFIG WITH ENVS. You can change the default config with `make cnf="config_special.env" build`
