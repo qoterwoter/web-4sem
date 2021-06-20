@@ -11,6 +11,6 @@ class Role extends AbstractEnum
     public const ADMIN = 'ROLE_ADMIN';
     public const USER  = 'ROLE_USER';
     public const OPERATOR  = 'ROLE_OPERATOR';
-    public const STUDENT  = 'ROLE_STUDENT';
+    public const LESSON_MANAGER  = 'ROLE_LESSON';
     public const MODERATOR  = 'ROLE_MODERATOR';
 }

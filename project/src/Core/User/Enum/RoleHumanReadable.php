@@ -10,6 +10,6 @@ final class RoleHumanReadable extends AbstractEnum
 {
     public const ADMIN = 'Администратор';
     public const USER  = 'Пользователь';
-    public const STUDENT  = 'Студент';
+    public const LESSON_MANAGER  = 'Менеджер предметов';
     public const MODERATOR  = 'Модератор';
 }
