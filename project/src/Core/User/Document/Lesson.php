@@ -21,7 +21,6 @@ class Lesson extends AbstractDocument
 
     /**
      * @MongoDB\Field(type="string")
-     * @MongoDB\UniqueIndex(name="lesson_title")
      */
     protected string $title;
 
@@ -38,13 +37,11 @@ class Lesson extends AbstractDocument
     /**
      * @ReferenceOne(targetDocument=User::class)
      */
-    protected User $user;
 
-    public function __construct(string $title, string $description, string $teacher, User $user)
+    public function __construct(string $title, string $description, string $teacher)
     {
         $this->title = $title;
         $this->description  = $description;
-        $this->user  = $user;
         $this->teacher  = $teacher;
     }
 
@@ -52,19 +49,26 @@ class Lesson extends AbstractDocument
     {
         return $this->title;
     }
+    public function setTitle(?string $title): void
+    {
+        $this->title = $title;
+    }
 
     public function getDescription(): string
     {
         return $this->description;
+    }
+    public function setDescription(?string $description): void
+    {
+        $this->description = $description;
     }
 
     public function getTeacher(): string
     {
         return $this->teacher;
     }
-
-    public function getUser(): User
+    public function setTeacher(?string $teacher): void
     {
-        return $this->user;
+        $this->teacher = $teacher;
     }
 }

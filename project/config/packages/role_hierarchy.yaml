@@ -3,23 +3,23 @@ security:
     !php/const App\Core\User\Enum\Role::ADMIN:
       - !php/const App\Core\User\Enum\Role::STUDENT
       - !php/const App\Core\User\Enum\Role::OPERATOR
-      - !php/const App\Core\User\Enum\Permission::STUDENT_CREATE
-      - !php/const App\Core\User\Enum\Permission::STUDENT_UPDATE
-      - !php/const App\Core\User\Enum\Permission::STUDENT_DELETE
-      - !php/const App\Core\User\Enum\Permission::STUDENT_VALIDATION
+      - !php/const App\Core\User\Enum\Permission::LESSON_CREATE
+      - !php/const App\Core\User\Enum\Permission::LESSON_UPDATE
+      - !php/const App\Core\User\Enum\Permission::LESSON_DELETE
+      - !php/const App\Core\User\Enum\Permission::LESSON_VALIDATION
     !php/const App\Core\User\Enum\Role::MODERATOR:
       - !php/const App\Core\User\Enum\Role::STUDENT
       - !php/const App\Core\User\Enum\Role::OPERATOR
-      - !php/const App\Core\User\Enum\Permission::STUDENT_UPDATE
-      - !php/const App\Core\User\Enum\Permission::STUDENT_VALIDATION
+      - !php/const App\Core\User\Enum\Permission::LESSON_UPDATE
+      - !php/const App\Core\User\Enum\Permission::LESSON_VALIDATION
     !php/const App\Core\User\Enum\Role::OPERATOR:
       - !php/const App\Core\User\Enum\Role::STUDENT
-      - !php/const App\Core\User\Enum\Permission::STUDENT_LESSON_CREATE
-      - !php/const App\Core\User\Enum\Permission::STUDENT_INDEX
+      - !php/const App\Core\User\Enum\Permission::LESSON_STUDENT_CREATE
+      - !php/const App\Core\User\Enum\Permission::LESSON_INDEX
     !php/const App\Core\User\Enum\Role::USER:
-      - !php/const App\Core\User\Enum\Permission::STUDENT_SHOW
+      - !php/const App\Core\User\Enum\Permission::LESSON_SHOW
     !php/const App\Core\User\Enum\Role::STUDENT:
       - !php/const App\Core\User\Enum\Role::STUDENT
-      - !php/const App\Core\User\Enum\Permission::STUDENT_LESSON_CREATE
-      - !php/const App\Core\User\Enum\Permission::STUDENT_SHOW
-      - !php/const App\Core\User\Enum\Permission::STUDENT_INDEX
+      - !php/const App\Core\User\Enum\Permission::LESSON_STUDENT_CREATE
+      - !php/const App\Core\User\Enum\Permission::LESSON_SHOW
+      - !php/const App\Core\User\Enum\Permission::LESSON_INDEX

@@ -8,11 +8,11 @@ use App\Core\Common\Enum\AbstractEnum;
 
 class Permission extends AbstractEnum
 {
-    public const STUDENT_LESSON_CREATE = 'ROLE_STUDENT_LESSON_CREATE';
-    public const STUDENT_SHOW           = 'ROLE_STUDENT_SHOW';
-    public const STUDENT_INDEX          = 'ROLE_STUDENT_INDEX';
-    public const STUDENT_CREATE         = 'ROLE_STUDENT_CREATE';
-    public const STUDENT_UPDATE         = 'ROLE_STUDENT_UPDATE';
-    public const STUDENT_DELETE         = 'ROLE_STUDENT_DELETE';
-    public const STUDENT_VALIDATION     = 'ROLE_STUDENT_VALIDATION';
+    public const LESSON_STUDENT_CREATE = 'ROLE_LESSON_STUDENT_CREATE';
+    public const LESSON_SHOW           = 'ROLE_LESSON_SHOW';
+    public const LESSON_INDEX          = 'ROLE_LESSON_INDEX';
+    public const LESSON_CREATE         = 'ROLE_LESSON_CREATE';
+    public const LESSON_UPDATE         = 'ROLE_LESSON_UPDATE';
+    public const LESSON_DELETE         = 'ROLE_LESSON_DELETE';
+    public const LESSON_VALIDATION     = 'ROLE_LESSON_VALIDATION';
 }
