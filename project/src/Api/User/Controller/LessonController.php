@@ -4,19 +4,16 @@ declare(strict_types=1);
 
 namespace App\Api\User\Controller;
 
-use App\Api\User\Dto\ContactResponseDto;
 use App\Api\User\Dto\LessonCreateRequestDto;
 use App\Api\User\Dto\LessonListResponseDto;
 use App\Api\User\Dto\LessonResponseDto;
 use App\Api\User\Dto\LessonUpdateRequestDto;
 use App\Api\User\Dto\ValidationExampleRequestDto;
 use App\Core\Common\Dto\ValidationFailedResponse;
-use App\Core\User\Document\Contact;
 use App\Core\User\Document\Lesson;
 use App\Core\User\Enum\Permission;
 use App\Core\User\Enum\Role;
 use App\Core\User\Enum\RoleHumanReadable;
-use App\Core\User\Repository\ContactRepository;
 use App\Core\User\Repository\LessonRepository;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Controller\Annotations\Route;
@@ -45,15 +42,13 @@ class LessonController extends AbstractController
      *
      * @return LessonResponseDto
      */
-    public function show(Lesson $lesson = null, ContactRepository $contactRepository)
+    public function show(Lesson $lesson = null)
     {
         if (!$lesson) {
             throw $this->createNotFoundException('Lesson not found');
         }
 
-        $contact = $contactRepository->findOneBy(['lesson' => $lesson]);
-
-        return $this->createLessonResponse($lesson, $contact);
+        return $this->createLessonResponse($lesson);
     }
 
     /**
@@ -120,32 +115,6 @@ class LessonController extends AbstractController
 
         return $this->createLessonResponse($lesson);
     }
-
-    /**
-     * @Route(path="/{id<%app.mongo_id_regexp%>}/contact", methods={"POST"})
-     * @IsGranted(Permission::LESSON_STUDENT_CREATE)
-     * @ParamConverter("lesson")
-     *
-     * @Rest\View(statusCode=201)
-     *
-     * @param Request           $request
-     * @param Lesson|null         $lesson
-     * @param ContactRepository $contactRepository
-     *
-     * @return LessonResponseDto|ValidationFailedResponse|Response
-     */
-    public function createContact(
-        Request $request,
-        Lesson $lesson = null,
-        ContactRepository $contactRepository
-    ) {
-        // todo проверки на валидацию всего всего и дто ...
-        $contact = new Contact($request->get('title', ''), $request->get('description', ''), $lesson);
-        $contactRepository->save($contact);
-
-        return $this->createLessonResponse($lesson, $contact);
-    }
-
     /**
      * @Route(path="/{id<%app.mongo_id_regexp%>}", methods={"PUT"})
      * @IsGranted(Permission::LESSON_UPDATE)
@@ -240,11 +209,10 @@ class LessonController extends AbstractController
 
     /**
      * @param Lesson         $lesson
-     * @param Contact|null $contact
      *
      * @return LessonResponseDto
      */
-    private function createLessonResponse(Lesson $lesson, ?Contact $contact = null): LessonResponseDto
+    private function createLessonResponse(Lesson $lesson): LessonResponseDto
     {
         $dto = new LessonResponseDto();
 

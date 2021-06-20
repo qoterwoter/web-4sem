@@ -20,8 +20,4 @@ class LessonCreateRequestDto
      */
     public string $teacher = '';
 
-
-    /**
-     * @Assert\Choice(callback={"App\Core\User\Enum\Role", "getValues"}, multiple=true)
-     */
 }

@@ -34,10 +34,6 @@ class Lesson extends AbstractDocument
      */
     protected string $teacher;
 
-    /**
-     * @ReferenceOne(targetDocument=User::class)
-     */
-
     public function __construct(string $title, string $description, string $teacher)
     {
         $this->title = $title;
