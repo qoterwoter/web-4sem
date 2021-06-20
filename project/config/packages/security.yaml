@@ -5,13 +5,13 @@ security:
     enable_authenticator_manager: true
     encoders:
         # this internal class is used by Symfony to represent in-memory users
-        Symfony\Component\Security\Core\User\User: 'auto'
+        Symfony\Component\Security\Core\Lesson\User: 'auto'
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         app_user_provider:
             mongodb:
-                class: App\Core\User\Document\User
+                class: App\Core\Lesson\Document\User
                 property: phone
 
     firewalls:
@@ -20,9 +20,9 @@ security:
             security: false
         api:
             pattern: ^/api
-            entry_point: App\Core\User\Security\ApiKeyAuthenticator
+            entry_point: App\Core\Lesson\Security\ApiKeyAuthenticator
             custom_authenticators:
-                - App\Core\User\Security\ApiKeyAuthenticator
+                - App\Core\Lesson\Security\ApiKeyAuthenticator
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used

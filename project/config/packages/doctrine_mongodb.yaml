@@ -10,9 +10,9 @@ doctrine_mongodb:
     default:
       auto_mapping: true
       mappings:
-        App\Core\User\Document:
+        App\Core\Lesson\Document:
           is_bundle: false
           type: annotation
-          dir: '%kernel.project_dir%/src/Core/User/Document'
-          prefix: 'App\Core\User\Document'
+          dir: '%kernel.project_dir%/src/Core/Lesson/Document'
+          prefix: 'App\Core\Lesson\Document'
           alias: AppCoreUser
