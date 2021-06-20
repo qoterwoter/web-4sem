@@ -110,6 +110,7 @@ class LessonController extends AbstractController
         );
         $lesson->setTitle($requestDto->title);
         $lesson->setDescription($requestDto->description);
+        $lesson->setTeacher($requestDto->teacher);
 
         $lessonRepository->save($lesson);
 
@@ -145,6 +146,7 @@ class LessonController extends AbstractController
 
         $lesson->setTitle($requestDto->title);
         $lesson->setDescription($requestDto->description);
+        $lesson->setTeacher($requestDto->teacher);
 
         $lessonRepository->save($lesson);
 
@@ -172,19 +174,6 @@ class LessonController extends AbstractController
         }
 
         $lessonRepository->remove($lesson);
-    }
-
-    private function getRoleHumanReadable(Lesson $lesson): ?string
-    {
-        if (in_array(Role::ADMIN, $lesson->getRoles(), true)) {
-            return RoleHumanReadable::ADMIN;
-        }
-
-        if (in_array(Role::LESSON, $lesson->getRoles(), true)) {
-            return RoleHumanReadable::LESSON;
-        }
-
-        return null;
     }
 
     /**

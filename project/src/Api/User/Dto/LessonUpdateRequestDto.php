@@ -14,4 +14,5 @@ class LessonUpdateRequestDto
     public ?string $title = null;
 
     public ?string $description = null;
+    public ?string $teacher = null;
 }

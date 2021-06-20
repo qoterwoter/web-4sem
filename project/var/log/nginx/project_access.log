@@ -165,3 +165,7 @@
 172.26.0.1 - - [20/Jun/2021:16:08:16 +0000] "GET /api/v1/lessons HTTP/1.1" 200 728 "-" "PostmanRuntime/7.28.0"
 172.26.0.1 - - [20/Jun/2021:16:08:23 +0000] "DELETE /api/v1/lessons/60cf67e0bb3f29691b4ae3f4 HTTP/1.1" 204 0 "-" "PostmanRuntime/7.28.0"
 172.26.0.1 - - [20/Jun/2021:16:08:26 +0000] "GET /api/v1/lessons HTTP/1.1" 200 458 "-" "PostmanRuntime/7.28.0"
+172.26.0.1 - - [20/Jun/2021:16:41:18 +0000] "GET /api/v1/lessons HTTP/1.1" 200 458 "-" "PostmanRuntime/7.28.0"
+172.26.0.1 - - [20/Jun/2021:16:42:46 +0000] "GET /api/v1/lessons HTTP/1.1" 200 458 "-" "PostmanRuntime/7.28.0"
+172.26.0.1 - - [20/Jun/2021:16:43:51 +0000] "POST /api/v1/lessons HTTP/1.1" 201 286 "-" "PostmanRuntime/7.28.0"
+172.26.0.1 - - [20/Jun/2021:16:43:56 +0000] "GET /api/v1/lessons HTTP/1.1" 200 733 "-" "PostmanRuntime/7.28.0"
