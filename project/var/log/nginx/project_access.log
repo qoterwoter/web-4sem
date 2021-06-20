@@ -201,3 +201,7 @@
 172.26.0.1 - - [20/Jun/2021:17:40:26 +0000] "GET /api/v1/lessons HTTP/1.1" 500 53625 "-" "PostmanRuntime/7.28.0"
 172.26.0.1 - - [20/Jun/2021:17:41:01 +0000] "GET /api/v1/lessons HTTP/1.1" 500 53625 "-" "PostmanRuntime/7.28.0"
 172.26.0.1 - - [20/Jun/2021:17:41:02 +0000] "GET /api/v1/lessons HTTP/1.1" 500 53625 "-" "PostmanRuntime/7.28.0"
+172.26.0.1 - - [20/Jun/2021:17:41:55 +0000] "GET /api/v1/lessons HTTP/1.1" 500 86 "-" "PostmanRuntime/7.28.0"
+172.26.0.1 - - [20/Jun/2021:17:42:03 +0000] "GET /api/v1/lessons HTTP/1.1" 500 86 "-" "PostmanRuntime/7.28.0"
+172.26.0.1 - - [20/Jun/2021:17:43:53 +0000] "GET /api/v1/lessons HTTP/1.1" 500 114454 "-" "PostmanRuntime/7.28.0"
+172.26.0.1 - - [20/Jun/2021:17:44:19 +0000] "GET /api/v1/lessons HTTP/1.1" 200 24 "-" "PostmanRuntime/7.28.0"
