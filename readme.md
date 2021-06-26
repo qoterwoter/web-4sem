@@ -48,14 +48,15 @@ ON lessons.student_id = students.id
 ![Example](https://sun9-19.userapi.com/impg/XY-G8nLwyFjdPRzbFY3K-YMfpTO2Uikb2lu47w/rlZxJC33b30.jpg?size=830x231&quality=96&sign=f20f01cdb6b385c3f05c21db1f6a2a50&type=album)
 
 ## RIGHT JOIN
-__RIGHT JOIN__ выводит все строки из _второй_ таблицы и строки из _первой_ таблицы, которые пересекаются с _первой_ таблицой по условию\
+__RIGHT JOIN__ выводит все строки из _второй_ таблицы и строки из _первой_ таблицы, которые пересекаются с _первой_ таблицой по условию.\
+в __LEFT JOIN__ _первая_ таблица является основной, к которой уже добавляется _вторая_, а в __RIGHT JOIN__ наоборот
 Следующие примеры являются идентичными:
 ```sql 
 SELECT * FROM lessons 
 RIGHT JOIN students 
 ON lessons.student_id = students.id
 ```
-Поскольку не для всех строк из таблицы *lessons* есть соответствующие строки из таблицы *students*, то в оставшиеся столбцы попало значение *null*
+Поскольку не для всех строк из таблицы *students* есть соответствующие строки из таблицы *lessons*, то в оставшиеся столбцы попало значение *null*
 ![Example](https://sun9-41.userapi.com/impg/6b1R_0JWS3CETV_KiIYZuoAe6s-6t_M4dxC3fg/3OGsNxlztMw.jpg?size=814x219&quality=96&sign=8a32233cbe9af620677bea4986a29ae2&type=album)
 ## Использованные материалы
 * https://habr.com/ru/post/448072/
