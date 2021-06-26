@@ -1,7 +1,7 @@
 # Рубежный контроль
 ## Схема базы данных
 Для дальнейших примеров я создал две таблицы и наполнил их\
-![Схема БД](https://sun9-7.userapi.com/impg/AlU02x7ogqTbhw8dY_FmTyY247CTOeeebTf6Ng/VIAzzSFyTUE.jpg?size=300x404&quality=96&sign=da7f44ecea37540c24615df72bfe6a01&type=album)
+![Схема БД](https://sun9-75.userapi.com/impg/ggr41vjNXUpEZmrJiEFzuqKK2VodwH1SUp5D7Q/isHkxVk2b8Y.jpg?size=309x507&quality=96&sign=a861ff8321bf775448ef3813d9c581e0&type=album)
 ### Таблица _lessons_
 ![табилца lessons](https://sun9-65.userapi.com/impg/lVf5mW3qWxDghunT_BTNDlMxlnwBiV9WbW_9lg/556Ede2G1Vg.jpg?size=489x244&quality=96&sign=075b8363df683b576898b60cef197e21&type=album)
 ### Таблица _students_
