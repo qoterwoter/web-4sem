@@ -3,7 +3,10 @@
 ## Схема базы данных
 Для дальнейших примеров я создал две таблицы и наполнил их\
 ![Схема БД](https://sun9-7.userapi.com/impg/AlU02x7ogqTbhw8dY_FmTyY247CTOeeebTf6Ng/VIAzzSFyTUE.jpg?size=300x404&quality=96&sign=da7f44ecea37540c24615df72bfe6a01&type=album)
-
+### Таблица _lessons_
+![табилца lessons](https://sun9-65.userapi.com/impg/lVf5mW3qWxDghunT_BTNDlMxlnwBiV9WbW_9lg/556Ede2G1Vg.jpg?size=489x244&quality=96&sign=075b8363df683b576898b60cef197e21&type=album)
+### Таблица _students_
+![табилца students](https://sun9-57.userapi.com/impg/o5TRl5Fr9qF1dzWd9J1XDDOEiWlynXhJdVaSUg/tAct4YMIArk.jpg?size=368x146&quality=96&sign=73f1903b92aed9ee881d59a4e2e38712&type=album)
 ## CROSS JOIN
 __CROSS JOIN__ берет строки из первой таблицы (*lessons*) и складывает их со всеми строками из второй таблицы (*students*)
 ```sql 
