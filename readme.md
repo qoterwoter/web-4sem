@@ -1,6 +1,6 @@
 # Рубежный контроль
 ## Вопрос
-Чем отличаются Right от Left Join, Cross и Inner Join. Придумать таблицы и на их примере объяснить разницу. (35 вариант)
+Чем отличаются Right от Left Join, Cross и Inner Join. Придумать таблицы и на их примере объяснить разницу. (4 вариант)
 ## Схема базы данных
 Для дальнейших примеров я создал две таблицы и наполнил их\
 ![Схема БД](https://sun9-75.userapi.com/impg/ggr41vjNXUpEZmrJiEFzuqKK2VodwH1SUp5D7Q/isHkxVk2b8Y.jpg?size=309x507&quality=96&sign=a861ff8321bf775448ef3813d9c581e0&type=album)
