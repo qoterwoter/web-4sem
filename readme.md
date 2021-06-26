@@ -16,10 +16,11 @@ JOIN students
 SELECT * FROM lessons 
 CROSS JOIN students 
 ```
+Результат:
 ![Example](https://sun9-66.userapi.com/impg/wH8tWRbJWqlD-Itt5RPgXii8dkhKqofZB9POmg/NhDpYsYwYpg.jpg?size=898x402&quality=96&sign=be5e064c30751c462fa7c2608798c3df&type=album)
 
 ## INNER JOIN
-__INNER JOIN__ выводит пересечения двух таблиц по условию (в отличии от __CROSS__, который выводит все возможные комбинации)\
+__INNER JOIN__ выводит пересечения двух таблиц по условию (в отличии от __CROSS__, который выводит все возможные комбинации).\
 Следующие примеры являются идентичными:
 ```sql 
 SELECT * FROM lessons 
@@ -36,6 +37,7 @@ SELECT * FROM lessons
 CROSS JOIN students 
 ON lessons.student_id = students.id
 ```
+Результат:
 ![Example](https://sun9-11.userapi.com/impg/bwZR5aS8lIALAUBgosMX_Hl5ibrS3RAguapLlw/68kKGnrS2pM.jpg?size=818x196&quality=96&sign=138a1d23225f0e6d4f5eb262bb47766d&type=album)
 
 ## LEFT JOIN
@@ -46,7 +48,8 @@ SELECT * FROM lessons
 LEFT JOIN students 
 ON lessons.student_id = students.id
 ```
-Поскольку не для всех строк из таблицы *lessons* есть соответствующие строки из таблицы *students*, то в оставшиеся столбцы попало значение *null*
+Поскольку не для всех строк из таблицы *lessons* есть соответствующие строки из таблицы *students*, то в оставшиеся столбцы попало значение *null*.\
+Результат:
 ![Example](https://sun9-19.userapi.com/impg/XY-G8nLwyFjdPRzbFY3K-YMfpTO2Uikb2lu47w/rlZxJC33b30.jpg?size=830x231&quality=96&sign=f20f01cdb6b385c3f05c21db1f6a2a50&type=album)
 
 ## RIGHT JOIN
@@ -58,7 +61,8 @@ SELECT * FROM lessons
 RIGHT JOIN students 
 ON lessons.student_id = students.id
 ```
-Поскольку не для всех строк из таблицы *students* есть соответствующие строки из таблицы *lessons*, то в оставшиеся столбцы попало значение *null*
+Поскольку не для всех строк из таблицы *students* есть соответствующие строки из таблицы *lessons*, то в оставшиеся столбцы попало значение *null*.\
+Результат:
 ![Example](https://sun9-41.userapi.com/impg/6b1R_0JWS3CETV_KiIYZuoAe6s-6t_M4dxC3fg/3OGsNxlztMw.jpg?size=814x219&quality=96&sign=8a32233cbe9af620677bea4986a29ae2&type=album)
 
 ## Вывод
