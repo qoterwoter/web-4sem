@@ -1,4 +1,6 @@
 # Рубежный контроль
 ## CROSS JOIN
 Создает все возможные комбинации 
-<пример кода>
+<select * from lessons 
+cross join students 
+>
