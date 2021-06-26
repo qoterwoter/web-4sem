@@ -44,6 +44,7 @@ SELECT * FROM lessons
 LEFT JOIN students 
 ON lessons.student_id = students.id
 ```
+Поскольку не для всех строк из таблицы *lessons* есть соответствующие строки из таблицы *students*, то в оставшиеся столбцы попало значение *null*
 ![Example](https://sun9-19.userapi.com/impg/XY-G8nLwyFjdPRzbFY3K-YMfpTO2Uikb2lu47w/rlZxJC33b30.jpg?size=830x231&quality=96&sign=f20f01cdb6b385c3f05c21db1f6a2a50&type=album)
 
 ## Использованные материалы
