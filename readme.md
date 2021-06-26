@@ -34,3 +34,6 @@ ON lessons.student_id = students.id
 ```
 INNER
 ![Example](https://sun9-9.userapi.com/impg/Cdkk7CV8LSsCZbiP5D7NsoUVuVtBhpUJURG8ZA/pSQLEDz_acs.jpg?size=838x356&quality=96&sign=4d0bad1ada9bb2915697f1b4172732f3&type=album)
+
+## Использованные материалы
+* https://habr.com/ru/post/448072/
